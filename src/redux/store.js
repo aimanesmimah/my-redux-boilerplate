@@ -13,7 +13,7 @@ const initialState = {
   class : {
     degree : "M1" ,
     teacher : "yu phoenix",
-    rating : "4"
+    rating : 4
   }
 }
 
