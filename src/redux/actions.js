@@ -9,9 +9,10 @@ export const addStudent = (id,name,age,number) =>
   number
 })
 
-export const updateStudentName = (name) =>
+export const updateStudentName = (id,name) =>
 ({
   type : C.UPDATE_STUDENT_NAME,
+  id,
   name
 })
 
@@ -22,8 +23,8 @@ export const removeStudent = (id) =>
   id
 })
 
-export const rateClass = (id,rating) =>
+export const rateClass = (rating) =>
 ({
-  type : C.UPDATE_CLASS,
+  type : C.RATE_CLASS,
   rating
 })

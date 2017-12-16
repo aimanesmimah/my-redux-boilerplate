@@ -2,7 +2,7 @@ const constants = {
   ADD_STUDENT : "ADD_STUDENT",
   REMOVE_STUDENT : "REMOVE_STUDENT",
   UPDATE_STUDENT_NAME : "UPDATE_STUDENT_NAME",
-  UPDATE_CLASS : "UPDATE_CLASS"
+  RATE_CLASS : "RATE_CLASS"
 }
 
 export default constants ;
