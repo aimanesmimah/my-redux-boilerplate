@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from 'redux';
+import {students,classroom} from './reducers';
 
 
 const initialState = {
@@ -7,10 +8,11 @@ const initialState = {
       id : 1 ,
       name : "cloud strife",
       age : 20 ,
-      student_number : "S455"
+      profile : "",
+      number : "S455"
     }
   ],
-  class : {
+  classroom : {
     degree : "M1" ,
     teacher : "yu phoenix",
     rating : 4
@@ -20,7 +22,7 @@ const initialState = {
 
 const storeFactory = () => {
         return createStore(
-            combineReducers({students,class}),
+            combineReducers({students,classroom}),
             initialState
         )
 }

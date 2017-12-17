@@ -8,7 +8,7 @@ export const student = (state = {} , action) => {
         id : action.id,
         name : action.name,
         age : action.age,
-        student_number : action.number
+        number : action.number
       }
     case C.UPDATE_STUDENT_NAME :
       return (state.id !== action.id)?
@@ -39,7 +39,7 @@ export const students = (state = [] , action) => {
   }
 }
 
-export const class = (state = {} , action) => {
+export const classroom = (state = {} , action) => {
   switch (action.type) {
     case C.RATE_CLASS :
       return {

@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Students from './components/students';
+import Classroom from './components/class';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
+  getChildContext() {
+    return {
+      store : this.props.store
+    }
+  }
+
+  componentWillMount() {
+    const {store} = this.props ;
+
+
+
+  }
+
+  componentWillUnmount() {
+
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+         <Classroom />
+         <br/><br/>
+         <Students />
       </div>
     );
   }
+}
+
+App.propTypes = {
+  store : PropTypes.object.isRequired
+}
+
+App.childContextTypes = {
+  store : PropTypes.object.isRequired
 }
 
 export default App;

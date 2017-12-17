@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
+    "react-avatar": "^2.5.1",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "react-stars": "^2.2.5",
+    "redux": "^3.7.2",
+    "styled-components": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
