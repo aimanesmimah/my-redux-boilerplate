@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Students from './components/students';
 import Classroom from './components/class';
+import AppState from './components/appState';
+import {AppLayout,ClassroomLayout,StudentLayout,AppStateLayout,SubAppLayout} from './components/styledComponents';
 import logo from './logo.svg';
 import './App.css';
 
@@ -30,10 +32,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-         <Classroom />
-         <br/><br/>
-         <Students />
+         <AppLayout>
+           <ClassroomLayout>
+             <Classroom />
+           </ClassroomLayout>
+           <SubAppLayout>
+             <StudentLayout>
+               <Students />
+             </StudentLayout>
+             <AppStateLayout>
+               <AppState />
+             </AppStateLayout>
+           </SubAppLayout>
+         </AppLayout>
       </div>
     );
   }

@@ -1,0 +1,5 @@
+.json-pretty{line-height:1.3;color:#566366;background:transparent;}
+.json-pretty .json-key{color:black;font-weight: bold;}
+.json-pretty .json-value{color:#a4f504;font-weight: bold;}
+.json-pretty .json-string{color:#a16d31;font-weight: bold;}
+.json-pretty .json-boolean{color:#5a0eec;font-weight: bold;}

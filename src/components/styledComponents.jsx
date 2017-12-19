@@ -58,3 +58,46 @@ export const ImageSection = styled.div`
      font-weight:600;
    }
 `
+
+export const AppLayout = styled.div`
+  display: flex;
+  flex-direction:column;
+
+`
+
+export const ClassroomLayout = styled.div`
+  width : 80%;
+  margin : 0 auto 10px auto ;
+  border-style:dotted;
+  border-color: #afb1a7;
+  background-color: #59b5f0
+`
+
+export const SubAppLayout = styled.div`
+  display: flex ;
+  flex-direction: row ;
+`
+
+export const StudentLayout = styled.div`
+  background-color: #95c5e4;
+  margin : 10px 50px 0 20px;
+  padding : 20px;
+  width : 75%;
+  border-style:dotted;
+  border-color: #afb1a7
+`
+
+export const AppStateLayout = styled.div`
+  background-color: #95c5e4;
+  margin : 10px 20px 0 0px;
+  padding : 5px 0 ;
+  width : 25%;
+  border-style:dotted;
+  border-color: #afb1a7
+`
+
+export const AppStateTitle = styled.p`
+  font-size: 15px;
+  color :#313266;
+  font-weight: bold
+`
