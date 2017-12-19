@@ -16,6 +16,13 @@ export const updateStudentName = (id,name) =>
   name
 })
 
+export const updateProfileURL = (id,url) =>
+({
+  type : C.UPDATE_STUDENT_PROFILE,
+  id,
+  url
+})
+
 
 export const removeStudent = (id) =>
 ({
@@ -27,4 +34,19 @@ export const rateClass = (rating) =>
 ({
   type : C.RATE_CLASS,
   rating
+})
+
+
+export const uploadImageAction = (uploading,num,task) =>
+({
+  type : C.UPLOADING_PROFILE,
+  uploading,
+  num,
+  task
+})
+
+export const uploadProgressAction = (uprogress) =>
+({
+  type : C.UPLOADING_PROGRESS,
+  uprogress
 })

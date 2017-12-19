@@ -15,14 +15,18 @@ class App extends Component {
 
   componentWillMount() {
     const {store} = this.props ;
-
-
+    this.unsubscribe = store.subscribe(
+          () => {
+            //console.log(JSON.stringify(store));
+            this.forceUpdate();
+          });
 
   }
 
   componentWillUnmount() {
-
+    this.unsubscribe();
   }
+
   render() {
     return (
       <div className="App">
