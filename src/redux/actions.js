@@ -24,6 +24,38 @@ export const updateProfileURL = (id,url) =>
 })
 
 
+export const hoverOnAddAction = (hover) =>
+({
+  type : C.HOVER_ON_ADD,
+  hover
+})
+
+export const hoverOnRemoveAction = (hover) =>
+({
+  type : C.HOVER_ON_REMOVE,
+  hover
+})
+
+
+export const hoverOnGoBackAction = (hover) =>
+({
+  type : C.HOVER_GO_BACK,
+  hover
+})
+
+export const addStudentClickedAction = (add) =>
+({
+  type : C.ADD_STUDENT_CLICKED,
+  add
+})
+
+export const removeStudentClickedAction = (remove) =>
+({
+  type : C.REMOVE_STUDENT_CLICKED,
+  remove
+})
+
+
 export const removeStudent = (id) =>
 ({
   type : C.REMOVE_STUDENT ,
@@ -49,4 +81,29 @@ export const uploadProgressAction = (uprogress) =>
 ({
   type : C.UPLOADING_PROGRESS,
   uprogress
+})
+
+export const addChecked = (id) =>
+({
+  type : C.ADD_CHECKED,
+  id
+})
+
+export const filterAction = (filter) =>
+({
+  type : C.FILTER_TIME,
+  filter
+})
+
+export const removeChecked = (id) =>
+({
+  type : C.REMOVE_CHECKED,
+  id
+})
+
+
+
+export const initializeChecked = () =>
+({
+  type : C.INITIALIZE_CHECKED
 })

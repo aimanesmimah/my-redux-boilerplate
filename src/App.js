@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Students from './components/students';
 import Classroom from './components/class';
 import AppState from './components/appState';
+import FilterList from './components/filterList';
 import {AppLayout,ClassroomLayout,StudentLayout,AppStateLayout,SubAppLayout} from './components/styledComponents';
 import logo from './logo.svg';
 import './App.css';
@@ -38,7 +39,11 @@ class App extends Component {
            </ClassroomLayout>
            <SubAppLayout>
              <StudentLayout>
-               <Students />
+               <FilterList>
+                 {
+                   ({items})=> <Students items={items} />
+                 }
+               </FilterList>
              </StudentLayout>
              <AppStateLayout>
                <AppState />

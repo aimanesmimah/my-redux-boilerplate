@@ -8,6 +8,7 @@ export const student = (state = {} , action) => {
         id : action.id,
         name : action.name,
         age : action.age,
+        profileURL : null,
         number : action.number
       }
     case C.UPDATE_STUDENT_NAME :
@@ -73,7 +74,54 @@ export const actions = (state = {} , action) => {
           ...state,
           uploadingProgress: action.uprogress
       }
+    case C.HOVER_ON_ADD :
+      return {
+        ...state,
+        hoverOnAddStudent : action.hover
+      }
+    case C.HOVER_ON_REMOVE :
+      return {
+        ...state,
+        hoverOnRemoveStudent : action.hover
+      }
+    case C.HOVER_GO_BACK :
+      return {
+        ...state,
+        hoverOnGoBack : action.hover
+      }
+    case C.ADD_STUDENT_CLICKED :
+      return {
+        ...state,
+        addStudentClicked : action.add
+      }
+    case C.REMOVE_STUDENT_CLICKED :
+      return {
+        ...state,
+        removeStudentClicked : action.remove
+      }
+    case C.FILTER_TIME :
+      return {
+        ...state,
+        filterTime : action.filter
+      }
     default:
        return state;
+  }
+}
+
+export const checkedStudents = (state = [] , action) => {
+  switch (action.type) {
+    case C.ADD_CHECKED:
+      return [
+        ...state,
+        action.id
+      ];
+    case C.REMOVE_CHECKED :
+      return state.filter(id => id !== action.id);
+    case C.INITIALIZE_CHECKED :
+      return [];
+    default:
+      return state ;
+
   }
 }

@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Avatar from 'react-avatar';
 import $ from 'jquery';
 import FileDownload from 'react-file-download';
-import {ImageSection} from './styledComponents';
+import {ImageSection,StudentSection,StudentInfos} from './styledComponents';
 //import uploadImage from '../common/images/uploadimage.jpg';
 import uploadImage from '../common/images/uploadpic.png';
 import firebaseStorage from '../firebase/firebaseConfig';
-import {uploadImageAction,uploadProgressAction,updateProfileURL} from '../redux/actions';
+import {uploadImageAction,uploadProgressAction,updateProfileURL,
+        addChecked,removeChecked} from '../redux/actions';
 
 export default class Student extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Student extends React.Component {
     }
 
     this.onUploadClick = this.onUploadClick.bind(this);
+    this.handleCheckedClick = this.handleCheckedClick.bind(this);
 
 
   }
@@ -35,6 +37,20 @@ export default class Student extends React.Component {
      }
 
     $('.' + number).click();
+
+  }
+
+  handleCheckedClick(id){
+    const {store} = this.context;
+    const {number} = this.props;
+
+
+    if($('#' + number).is(':checked'))
+       store.dispatch(addChecked(id));
+    else{
+       //alert('entered');
+       store.dispatch(removeChecked(id));
+     }
 
   }
 
@@ -74,7 +90,7 @@ export default class Student extends React.Component {
     const {id,name,age,profileURL,number,key} = this.props;
     const {actions} = this.context.store.getState();
 
-    return (<div>
+    return (<StudentSection>
        <input className={number} type="file" name="profile" style={{display : 'none'}} />
        <ImageSection >
          { (actions.uploadingProfile && ( actions.uploadingStudentNum === number))?
@@ -82,6 +98,11 @@ export default class Student extends React.Component {
               style={{width : 100, opacity : 0.2 }}/> :
            <Avatar size="100" name={name} round={true} src={(profileURL)?profileURL:""}
               style={{width : 100 }}/>
+          }
+          {
+            (actions.removeStudentClicked)?
+               <input type="checkbox" id={number} className="removeinput"
+                       onClick={()=>this.handleCheckedClick(id)} /> :""
           }
           <button className="uploadimage" onClick={this.onUploadClick}>
             <img src={uploadImage} className="image" title="upload"  />
@@ -93,9 +114,9 @@ export default class Student extends React.Component {
         </ImageSection>
 
 
-       <p>{name} | {age} y.o</p>
-       <p>N°: {number}</p>
-    </div>);
+       <StudentInfos>{name} | {age} y.o <br/>N°: {number}</StudentInfos>
+
+    </StudentSection>);
   }
 }
 
