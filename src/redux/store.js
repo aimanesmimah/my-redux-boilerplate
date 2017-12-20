@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {students,classroom,actions,checkedStudents} from './reducers';
 
 
@@ -60,9 +60,19 @@ const initialState = {
   checkedStudents : []
 }
 
+const logger = store => next => action => {
+    let result;
+    console.groupCollapsed("dispatching", action.type);
+    console.log('prev state', store.getState());
+    console.log('action', action);
+    result = next(action);
+    console.log('next state', store.getState());
+    console.groupEnd();
+}
+
 
 const storeFactory = () => {
-        return createStore(
+        return applyMiddleware(logger)(createStore)(
             combineReducers({students,classroom,actions,checkedStudents}),
             (localStorage['redux-store'])?JSON.parse(localStorage['redux-store']):initialState
         )
