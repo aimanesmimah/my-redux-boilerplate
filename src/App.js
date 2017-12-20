@@ -20,8 +20,9 @@ class App extends Component {
     const {store} = this.props ;
     this.unsubscribe = store.subscribe(
           () => {
-            //console.log(JSON.stringify(store));
+
             this.forceUpdate();
+            localStorage['redux-store'] = JSON.stringify(store.getState());
           });
 
   }

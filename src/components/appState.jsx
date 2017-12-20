@@ -7,7 +7,14 @@ import '../common/style/JSONPretty.monikai.css';
 export default class AppState extends React.Component {
   render() {
     const {store} = this.context;
-    const stringifiedState = JSON.stringify(store.getState());
+    var stringifiedState;
+    if(store.getState().actions.uploadingTask){
+        var storeModified = store.getState();
+        storeModified.actions.uploadingTask = "not null";
+        stringifiedState = JSON.stringify(storeModified);
+    }
+    else
+       stringifiedState = JSON.stringify(store.getState());
     //alert(stringifiedState);
     return (<div>
       <AppStateTitle>Store state</AppStateTitle>

@@ -64,7 +64,7 @@ const initialState = {
 const storeFactory = () => {
         return createStore(
             combineReducers({students,classroom,actions,checkedStudents}),
-            initialState
+            (localStorage['redux-store'])?JSON.parse(localStorage['redux-store']):initialState
         )
 }
 
