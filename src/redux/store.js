@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {students,classroom,actions,checkedStudents} from './reducers';
+import $ from 'jquery';
 
 
 const initialState = {
@@ -62,6 +63,7 @@ const initialState = {
 
 const logger = store => next => action => {
     let result;
+    $(document).trigger('dispatch',[action]);
     console.groupCollapsed("dispatching", action.type);
     console.log('prev state', store.getState());
     console.log('action', action);

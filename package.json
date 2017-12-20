@@ -10,6 +10,7 @@
     "react-dom": "^16.2.0",
     "react-file-download": "^0.3.5",
     "react-json-pretty": "^1.7.4",
+    "react-notifications": "^1.4.3",
     "react-scripts": "1.0.17",
     "react-stars": "^2.2.5",
     "redux": "^3.7.2",
