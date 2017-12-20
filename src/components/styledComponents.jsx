@@ -8,7 +8,7 @@ export const StudentsSection = styled.div`
 `
 
 export const StyledClassroom = styled.div`
-  width : 300px ;
+  width : 400px ;
   margin : auto ;
   padding : auto ;
 
@@ -16,7 +16,6 @@ export const StyledClassroom = styled.div`
   .starrating {
     width : 100px ;
     margin: auto;
-
   }
 `
 
@@ -84,7 +83,7 @@ export const AppLayout = styled.div`
 `
 
 export const ClassroomLayout = styled.div`
-  width : 80%;
+  width : 70%;
   margin : 0 auto 10px auto ;
   border-style:dotted;
   border-color: #afb1a7;
@@ -246,4 +245,12 @@ export const SubmitSection = styled.div`
        outline : none;
      }
   }
+`
+
+export const ClassTitle = styled.p`
+  font-size: 18px;
+  font-family:serif;
+  font-weight: 600;
+  color : #6a6a77;
+  line-height: 10px;
 `

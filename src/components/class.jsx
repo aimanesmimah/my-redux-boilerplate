@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Starrating from 'react-stars';
-import {StyledClassroom} from './styledComponents';
+import {StyledClassroom,ClassTitle} from './styledComponents';
+import {rateClass} from '../redux/actions';
 
 
 
@@ -9,11 +10,12 @@ const Classroom = (props,{store}) => {
   const {classroom} = store.getState();
 
   const ratingChanged = (newRating) => {
-
+         store.dispatch(rateClass(newRating));
   }
 
   return (<StyledClassroom>
-    <h3>{classroom.degree} | {classroom.teacher}</h3>
+
+    <ClassTitle>{classroom.degree} Class | Teacher {classroom.teacher}</ClassTitle>
     <div className="starrating">
     <Starrating count={5}
         value={classroom.rating}
